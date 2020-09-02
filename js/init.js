@@ -40,8 +40,16 @@ var getJSONData = function(url){
     });
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
 document.addEventListener("DOMContentLoaded", function(e){
+  let usuario = window.localStorage.getItem('userId')
+  document.getElementById('usercontainer').textContent = usuario
 });
+
+document.getElementById('logout').addEventListener("click", function(e){
+  e.preventDefault()
+  window.localStorage.removeItem('userId')
+  window.localStorage.removeItem('userPass')
+  window.location.href = "./index.html"
+  console.log(`logout`)
+})

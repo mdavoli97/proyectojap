@@ -6,6 +6,7 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -35,11 +36,11 @@ function sortProducts(criteria, array){
     return result;
 }
 
-function showProductsList(){
+function showProductsList(myarray = currentProductsArray){
 
     let htmlContentToAppend = "";
-    for(let i = 0; i < currentProductsArray.length; i++){
-        let product = currentProductsArray[i];
+    for(let i = 0; i < myarray.length; i++){
+        let product = myarray[i];
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.soldCount) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.soldCount) <= maxCount))){
@@ -133,4 +134,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showProductsList();
     });
+
 });
+
+document.getElementById("filterbox").addEventListener("change", function(e){
+    const search = e.target.value
+    let newlist = currentProductsArray.filter((elemento) => elemento.name.toLowerCase().includes(search))
+    showProductsList(newlist);
+})
