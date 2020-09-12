@@ -13,6 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -68,6 +69,27 @@
           <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
           </div>
         </dd>
+
+        <dt>Comentarios</dt>
+        <dd>
+          <p id="productComments"></p>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comenta!</label>
+            <br>
+            <div class="main">
+              <i class="fa fa-star checked" id="one"></i>
+              <i class="fa fa-star unchecked" id="two"></i>
+              <i class="fa fa-star unchecked" id="three"></i>
+              <i class="fa fa-star unchecked" id="four"></i>
+              <i class="fa fa-star unchecked" id="five"></i>
+              </div>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <br>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+
+          </div>
+        </dd>
+
       </dl>
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
